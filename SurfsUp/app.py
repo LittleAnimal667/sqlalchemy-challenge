@@ -80,21 +80,6 @@ def temps():
     return jsonify(temperatures)
 
 
-# @app.route("/api/v1.0/tobs") 
-# def temps():
-#     """Return the temperatures data for the last year."""
-#     #calculates the date one year ago for the most active station
-    
-#     last_year_date = session.query(func.max(Measurement.date)).scalar() - dt.timedelta(days=365)
-    
-#     # query measurement table for temperatures observed in the last year 
-#     results = session.query(Measurement.tobs).\
-#         filter(Measurement.date >= last_year_date, Measurement.station == 'USC00519281').all()
-    
-#     #process query into a list and return JSON
-#     temperatures = [temperature[0] for temperature in results]
-#     return jsonify(temperatures)
-
 @app.route("/api/v1.0/stations")
 def stations():
     """Return data for all stations"""
